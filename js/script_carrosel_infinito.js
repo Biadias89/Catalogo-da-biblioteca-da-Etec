@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img
                     src="${livro.src}"
                     alt="Livro ${livro.id}"
-                    class="w-56 h-80 object-cover rounded-lg"
+                    class="w-56 h-80 sm:w-7 sm:h-14 object-cover rounded-lg"
                 />
             `;
 

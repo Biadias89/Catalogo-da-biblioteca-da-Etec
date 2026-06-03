@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let index = 0; index < 10; index++) {
             const cardDiv = document.createElement('div');
             cardDiv.className = 'flex-none w-1/5 px-2';
-            cardDiv.innerHTML = `<div class="bg-white rounded-2xl shadow-lg p-6">
+            cardDiv.innerHTML = `<div class="bg-white border-2 rounded-2xl shadow-lg p-6">
                                     <div class="flex justify-center">
                                         <img src="https://m.media-amazon.com/images/I/61EWhhsiDaL.jpg" alt="Livro" class="w-72 rounded-lg shadow-md">
                                     </div>

@@ -1,1 +1,10 @@
 npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+
+//comandos git
+/*
+    git pull origin main
+    git add .
+    git commit -m ""
+    git push origin main
+*/
