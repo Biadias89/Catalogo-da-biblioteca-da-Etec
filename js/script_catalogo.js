@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardDiv = document.createElement('div');
 
         cardDiv.innerHTML = `
-                <div class="flex flex-row rounded-lg border-amber-700 border-2 hover:scale-105">
-                    <img src="https://m.media-amazon.com/images/I/71TzI-CQrjL.jpg" class=" sm:w-1/2"> 
-                    <div class="p-5 flex flex-col ">
+                <div class="flex 2xl:flex-row flex-col rounded-lg border-amber-700 border-2 hover:scale-105">
+                    <img src="https://m.media-amazon.com/images/I/71TzI-CQrjL.jpg" class=" 2xl:w-1/2 "> 
+                    <div class="p-5 flex flex-col">
                         <h3 class=" font-serif text-xl mb-2">Machado</h3>
                         <p class=" text-sm">
                             Lorem Ipsum fnervmremfwemffqwg  wrbegwfefgf egew    g   wg  weg wgfwe   gwegw   e
