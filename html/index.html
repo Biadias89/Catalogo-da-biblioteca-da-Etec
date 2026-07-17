@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../dist/output.css" rel="stylesheet">
+        <link rel="stylesheet" href="../dist/custom.css">
+        <script src="../js/script.js" defer></script>
+        <script src="../js/script_carrosel_infinito.js" defer></script>
+    </head>
+    <body>
+
+        <!--nav  -->
+            <nav class="bg-[#2A2A2A] p-4 shadow-lg">
+                <div class="container mx-auto flex items-center justify-between">
+                    <img src="../img/etec.png" class="w-1/10" >
+                </div>
+            </nav>
+
+             <div class="bg-[#6B0000] shadow-md">
+                <div class="container flex ml-2 py-1 gap-4">
+                    <a href="../html/index.html" class="p-2 rounded hover:bg-red-900 transition duration-300">
+                        <img src="../img/icones-02.svg" alt="Página Inicial" class="w-6 h-6">
+                    </a>
+                    <a href="../html/sobre.html" class="p-2 rounded hover:bg-red-900 transition duration-300">
+                        <img src="../img/icones-01.svg" alt="Sobre Nós" class="w-6 h-6">
+                    </a>
+                    <a href="../html/catalogo.html" class="p-2 rounded hover:bg-red-900 transition duration-300">
+                        <img src="../img/icones-03.svg" alt="Catálogo" class="w-6 h-6">
+                    </a>
+                </div>
+            </div>
+            <!-- final nav -->
+
+        <!-- texto inicio -->
+        <div class=" contaniner text-center grid gap-4 mt-10 mx-auto">
+        
+            <h1 class="text-2xl text-[#5D003E]">Lorem Ipsum</h1>
+            <h2 class="text-3xl text-[#AD0E0A]">Lorem Ipsum dolor</h2>
+            <p>Lorem ipsum dolor sit amet consectetur. Vivamus porta varius at curabitur.</p>
+        
+        </div>
+        <!-- texto inicio final -->
+
+        <div class="max-w-3xl mx-auto mt-10 p-4">
+
+            <div class="relative">
+                <input
+                    type="text"
+                    placeholder="Pesquisar algo..."
+                    class="w-full py-3 pl-4 pr-40 border border-gray-400 rounded-lg bg-white shadow-sm">
+
+                <button
+                    class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-[#AD0E0A] text-white rounded-md cursor-pointer">
+                    Pesquisa Avançada
+                </button>
+            </div>
+
+        </div>
+
+        <!-- carrosel row infinito, livros recentes -->
+
+        <div class="mb-14 w-full overflow-hidden bg-gray-50 py-8 mt-14">
+            <h2 class="text-3xl font-bold text-center text-[#5D003E] mb-12">
+                Lançamentos Recentes
+            </h2>
+            
+            <div id="pista-infinita" class="flex gap-6 animate-scroll-infinito w-max "></div>
+        </div>
+
+        <!-- linhas direita -->
+         <div class="mt-10">
+            <h1 class="ml-6 text-3xl">Lorem Ipsum dolor sit amet</h1>
+            <div class="grid grid-cols-3 items-center">
+                <li class="w-70 h-2 bg-[#AD0E0A] list-none flex 2xl:w-150"></li>
+                <li class="rounded-4xl w-35 h-8 list-none bg-[#AD0E0A] flex 2xl:w-50 2xl:h-10"></li>
+            </div>
+        </div>
+
+            <div class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
+    
+                <div class="pista-carrossel flex w-300 h-150 transition-transform duration-500 ease-in-out "></div>
+
+                <button class="btn-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                        <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
+                    </button>
+
+                   <button class="btn-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                        <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
+                    </button>
+
+            </div>
+
+
+        <!-- linhas esquerda -->
+        <div class="mt-10">
+            <h1 class="mr-6 text-3xl text-right">Lorem Ipsum dolor sit amet</h1>
+            <div class="grid grid-cols-3 items-center scale-x-[-1] ">
+                <li class="w-70 h-2 bg-[#AD0E0A] list-none flex 2xl:w-150"></li>
+                <li class="rounded-4xl w-35 h-8 list-none bg-[#AD0E0A] 2xl:w-50 2xl:h-10"></li>
+            </div>
+        </div>
+
+         <div class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
+    
+                <div class="pista-carrossel flex w-300 h-150 transition-transform duration-500 ease-in-out "></div>
+
+                <button class="btn-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                        <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
+                    </button>
+
+                   <button class="btn-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                        <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
+                    </button>
+
+            </div>
+
+             <!-- linhas direita -->
+                <div class="mt-10">
+                    <h1 class="ml-6 text-3xl">Lorem Ipsum dolor sit amet</h1>
+                    <div class="grid grid-cols-3 items-center">
+                        <li class="w-70 h-2 bg-[#AD0E0A] list-none flex 2xl:w-150"></li>
+                        <li class="rounded-4xl w-35 h-8 list-none bg-[#AD0E0A] flex 2xl:w-50 2xl:h-10"></li> <!--a logica esta inversa--> 
+                    </div>
+                </div>
+        </div>
+
+            <div class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
+    
+                <div class="pista-carrossel w-300 h-150 flex transition-transform duration-500 ease-in-out "></div>
+
+                <button class="btn-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                        <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
+                    </button>
+
+                   <button class="btn-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                        <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
+                    </button>
+
+            </div>
+
+
+        <!-- linhas esquerda -->
+        <div class="mt-10">
+            <h1 class="mr-6 text-3xl text-right">Lorem Ipsum dolor sit amet</h1>
+            <div class="grid grid-cols-3 items-center scale-x-[-1] ">
+                <li class="w-70 h-2 bg-[#AD0E0A] list-none flex 2xl:w-150"></li>
+                <li class="rounded-4xl w-35 h-8 list-none bg-[#AD0E0A] 2xl:w-50 2xl:h-10"></li>
+            </div>
+        </div>
+
+         <div class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
+    
+                <div class="pista-carrossel w-300 h-150 flex transition-transform duration-500 ease-in-out"></div>
+
+               <button class="btn-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                        <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
+                    </button>
+
+                   <button class="btn-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                        <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
+                    </button>
+
+        </div>
+
+            <div class="flex justify-end p-10">
+                <a href="../html/catalogo.html"
+                class="px-5 py-2 bg-[#AD0E0A] text-white rounded-md font-medium">
+                    Ver Todo Catálogo
+                </a>
+            </div>
+
+            <footer class="w-full font-sans">
+                <div class="bg-[#2A2A2A] py-10 px-4 shadow-lg">
+                    <div class="container mx-auto flex flex-col md:flex-row items-start justify-between gap-8">
+                        
+                        <div class="flex-1">
+                            <h3 class="text-red-600 font-bold text-lg mb-4">Nossa Localização</h3>
+                            <div class="text-gray-300 text-sm font-semibold space-y-4">
+                                <p class="flex items-center gap-2">
+                                    Escola Estadual Técnica de Embu
+                                </p>
+                                <p class="flex items-start gap-2 leading-relaxed">
+                                    <span>
+                                        Rua Marcelino Pinto Teixeira, N 529<br>
+                                        Parque Industrial Ramos de Freitas<br>
+                                        Embu das Artes, SP - Brasil |<br>
+                                        06816-000
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex-1">
+                            <h3 class="text-red-600 font-bold text-lg mb-4">Contatos</h3>
+                            <div class="text-gray-300 text-sm font-semibold space-y-3">
+                                <p class="flex items-center gap-2"> 
+                                    Etec de Embu: +55 (11) 4785-4900
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    Biblioteca: +55 (11) 99854-6198
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex justify-center md:justify-end items-center mt-6 md:mt-0">
+                            <img src="../img/images-removebg-preview.png">
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="bg-[#6B0000] w-full h-8 flex"></div>
+            </footer>
+    </body>
+</html>
