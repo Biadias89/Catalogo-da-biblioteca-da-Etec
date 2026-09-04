@@ -1,0 +1,34 @@
+@keyframes scroll-infinito {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-20%);
+    }
+}
+
+.animate-scroll-infinito {
+    animation: scroll-infinito 20s linear infinite;
+}
+
+.animate-scroll-infinito:hover {
+    animation-play-state: paused;
+}
+
+.card-livro {
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+/* Todos ficam um pouco menores */
+.animate-scroll-infinito:hover .card-livro {
+    transform: scale(0.9);
+}
+
+/* O card selecionado cresce */
+.animate-scroll-infinito .card-livro:hover {
+    transform: scale(1.2);
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 10;
+}
