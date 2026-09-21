@@ -6,7 +6,7 @@ npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -- npm run tailw
     git pull origin main
     git add .
     git commit -m ""
-    git push origin main
+    git push -u origin main
 */
 
 // colocar - npm install tailwind-animations 
