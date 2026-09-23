@@ -4,6 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../dist/output.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                AOS.init({
+                    duration: 1000,
+                    once: true,
+                    offset: 20
+                });
+            });
+        </script>
+
         <script src="../js/script_catalogo.js" type="module" defer></script>
         <script src="../js/script-padrões.js" defer></script>
     </head>
@@ -22,10 +35,10 @@
         
             <!-- texto inicio final -->
 
-            <div class="max-w-3xl mx-auto mt-10 p-4 PesquisaButton">
+            <div data-aos="fade-down" class="max-w-3xl mx-auto mt-10 p-4 PesquisaButton">
             </div>
 
-            <div class="grid gap-4 2xl:p-40 2xl:-mt-32 p-10 lg:grid-cols-4 lg:gap-8 "id="gridLivros">
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="grid gap-4 2xl:p-40 2xl:-mt-32 p-10 lg:grid-cols-4 lg:gap-8 "id="gridLivros">
             </div>
             
             <footer class="w-full font-sans" id="rodape">

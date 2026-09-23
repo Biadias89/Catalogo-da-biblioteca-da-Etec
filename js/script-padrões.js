@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => { 
+document.addEventListener('DOMContentLoaded', () => {
+
     const nav = document.getElementById("navBar");
     const rodape = document.getElementById("rodape");
     const pesquisaButton = document.querySelectorAll(".PesquisaButton");
@@ -44,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 });
         nav.innerHTML = `
-                <div class="mx-auto flex items-center bg-[#2A2A2A] p-2">
-                    <img src="../img/etec.png" class="w-1/4 lg:w-1/10" >
+                <div class="mx-auto flex items-center bg-[#2A2A2A] p-2 ">
+                    <img src="../img/etec.png" class="w-1/4 lg:w-1/10 ml-5" >
                 </div>
                 
 

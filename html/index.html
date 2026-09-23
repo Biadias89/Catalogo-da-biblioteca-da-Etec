@@ -5,6 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../dist/output.css" rel="stylesheet">
         <link rel="stylesheet" href="../dist/custom.css">
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                AOS.init({
+                    duration: 1000,
+                    once: false,
+                });
+            });
+        </script>
+
+        <title>Catálogo da Biblioteca da Etec</title>
         <script src="../js/script.js" type="module" defer></script>
 
         <script src="../js/script-padrões.js" defer></script>
@@ -19,7 +32,7 @@
             <!-- final nav -->
 
         <!-- texto inicio -->
-        <div class=" contaniner text-center grid gap-4 mt-10 mx-auto">
+        <div data-aos="fade-down" class="contaniner text-center grid gap-4 mt-10 mx-auto">
         
             <h1 class="text-2xl text-[#5D003E]">Lorem Ipsum</h1>
             <h2 class="text-3xl text-[#AD0E0A]">Lorem Ipsum dolor</h2>
@@ -47,10 +60,11 @@
         </div>
 
         <!-- linhas direita -->
-         <div class="mt-10 linhaDireita">
+         <div data-aos="fade-right" class="mt-10 linhaDireita">
         </div>
 
-            <div class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
+            <div  data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom" class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
     
                 <div class="pista-carrossel flex lg:w-300 lg:h-200 h-180 transition-transform duration-500 ease-in-out "></div>
 
@@ -65,10 +79,11 @@
             </div>
 
         <!-- linhas esquerda -->
-        <div class="mt-10 linhaEsquerda">
+        <div data-aos="fade-left" class="mt-10 linhaEsquerda">
         </div>
 
-            <div class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
+            <div data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom" class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
     
                 <div class="pista-carrossel flex lg:w-300 lg:h-200 h-180 transition-transform duration-500 ease-in-out "></div>
 
@@ -83,10 +98,11 @@
             </div>
 
              <!-- linhas direita -->
-                <div class="mt-10 linhaDireita">
+                <div data-aos="fade-right" class="mt-10 linhaDireita">
                 </div>
 
-            <div class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
+            <div data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom" class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
     
                 <div class="pista-carrossel flex lg:w-300 lg:h-200 h-180 transition-transform duration-500 ease-in-out "></div>
 
@@ -102,10 +118,11 @@
 
 
         <!-- linhas esquerda -->
-        <div class="mt-10 linhaEsquerda">
+        <div data-aos="fade-left" class="mt-10 linhaEsquerda">
         </div>
 
-         <div class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
+         <div data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom" class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
     
                 <div class="pista-carrossel flex lg:w-300 lg:h-200 h-180 transition-transform duration-500 ease-in-out "></div>
 
