@@ -5,19 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../dist/output.css" rel="stylesheet">
         <link rel="stylesheet" href="../dist/custom.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css">
 
+
+        
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 AOS.init({
                     duration: 1000,
-                    once: false,
+                    once: true,
                 });
             });
         </script>
 
         <title>Catálogo da Biblioteca da Etec</title>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
         <script src="../js/script.js" type="module" defer></script>
 
         <script src="../js/script-padrões.js" defer></script>
@@ -41,10 +45,11 @@
         </div>
         <!-- texto inicio final -->
 
-        <div class="max-w-3xl mx-auto mt-10 p-4 PesquisaButton">
 
+        <div >
+            <div data-aos="fade-up" class="max-w-3xl mx-auto mt-10 p-4 PesquisaButton"></div>
         </div>
-
+        
         <!-- carrosel row infinito, livros recentes -->
 
         <div class="mb-14 w-full overflow-hidden bg-gray-50 py-8 mt-14 hidden lg:block">
@@ -58,83 +63,9 @@
             <div class=" h-12 w-full">
             </div>
         </div>
+        <!-- Swiper -->
+            <div id="container-imagens"></div>
 
-        <!-- linhas direita -->
-         <div data-aos="fade-right" class="mt-10 linhaDireita">
-        </div>
-
-            <div  data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom" class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
-    
-                <div class="pista-carrossel flex lg:w-300 lg:h-200 h-180 transition-transform duration-500 ease-in-out "></div>
-
-                <button class="btn-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
-                        <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
-                    </button>
-
-                   <button class="btn-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
-                        <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
-                    </button>
-
-            </div>
-
-        <!-- linhas esquerda -->
-        <div data-aos="fade-left" class="mt-10 linhaEsquerda">
-        </div>
-
-            <div data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom" class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
-    
-                <div class="pista-carrossel flex lg:w-300 lg:h-200 h-180 transition-transform duration-500 ease-in-out "></div>
-
-                <button class="btn-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
-                        <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
-                    </button>
-
-                   <button class="btn-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
-                        <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
-                    </button>
-
-            </div>
-
-             <!-- linhas direita -->
-                <div data-aos="fade-right" class="mt-10 linhaDireita">
-                </div>
-
-            <div data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom" class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
-    
-                <div class="pista-carrossel flex lg:w-300 lg:h-200 h-180 transition-transform duration-500 ease-in-out "></div>
-
-                <button class="btn-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
-                        <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
-                    </button>
-
-                   <button class="btn-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
-                        <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
-                    </button>
-
-            </div>
-
-
-        <!-- linhas esquerda -->
-        <div data-aos="fade-left" class="mt-10 linhaEsquerda">
-        </div>
-
-         <div data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom" class="carrossel-container relative mt-10 w-full max-w-7xl mx-auto overflow-hidden py-10 px-4">
-    
-                <div class="pista-carrossel flex lg:w-300 lg:h-200 h-180 transition-transform duration-500 ease-in-out "></div>
-
-                <button class="btn-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
-                        <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
-                    </button>
-
-                   <button class="btn-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
-                        <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
-                    </button>
-
-            </div>
 
             <div class="flex justify-end p-10">
                 <a href="../html/catalogo.html"

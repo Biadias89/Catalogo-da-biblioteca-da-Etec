@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const nav = document.getElementById("navBar");
@@ -6,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const linhaD = document.querySelectorAll(".linhaDireita");
     const linhaE = document.querySelectorAll(".linhaEsquerda");
 
+    
+    // criando
     linhaD.forEach(linhaD => {
         linhaD.innerHTML = `
             <h1 class="ml-6 text-2xl lg:text-3xl">Lorem Ipsum dolor sit amet</h1>
@@ -45,13 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 });
         nav.innerHTML = `
-                <div class="mx-auto flex items-center bg-[#2A2A2A] p-2 ">
+                <div class="w-full mx-auto flex items-center bg-[#2A2A2A] p-2 ">
                     <img src="../img/etec.png" class="w-1/4 lg:w-1/10 ml-5" >
                 </div>
                 
 
-                <div class="bg-[#6B0000] shadow-md ">
-                    <div class="flex ml-2 py-1 gap-4">
+                <div id="navVermelho" class="bg-[#6B0000] shadow-md" >
+                    <div class="flex items-center justify-between gap-4 px-2">
+                        <div class="flex ml-0 py-1 gap-4">
                         <a href="../html/index.html" class="p-2 rounded hover:bg-red-900 transition duration-300">
                             <img src="../img/icones-02.svg" alt="Página Inicial" class="w-6 h-6">
                         </a>
@@ -61,9 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="../html/catalogo.html" class="p-2 rounded hover:bg-red-900 transition duration-300">
                             <img src="../img/icones-03.svg" alt="Catálogo" class="w-6 h-6">
                         </a>
+                        </div>
+                        <canvas id="livroScrollCanvas" class="livro-scroll-canvas" width="112" height="48" aria-label="Livro animado conforme a rolagem da página"></canvas>
                     </div>
                 </div>
              `;
+
+    
     
     rodape.innerHTML = `<div class="bg-[#2A2A2A] py-10 px-4 shadow-lg">
                     <div class="container mx-auto flex flex-col md:flex-row items-start justify-between gap-8">
@@ -105,4 +114,75 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 
                 <div class="bg-[#6B0000] w-full h-8 flex"></div>`;
+                
+        const navVermelho = document.querySelector("#navVermelho");
+        const navVerPosição = navVermelho.offsetTop;
+        const livroCanvas = document.querySelector("#livroScrollCanvas");
+        const livroContexto = livroCanvas.getContext("2d");
+            const livroQuadros = Array.from({ length: 34 }, (_, indice) => {
+            const imagem = new Image();
+            imagem.src = `../img/sprites/sprites/sprite_${indice + 1}.png`;
+            imagem.addEventListener("load", desenharLivro);
+            return imagem;
+        });
+        let livroQuadroAtual = 0;
+        let livroQuadroAlvo = 0;
+        let livroAnimando = false;
+
+        function desenharLivro() {
+            const largura = livroCanvas.clientWidth;
+            const altura = livroCanvas.clientHeight;
+            const quadro = livroQuadros[Math.round(livroQuadroAtual)];
+            if (!quadro.complete || !quadro.naturalWidth) return;
+
+            const escala = Math.min(largura / quadro.naturalWidth, altura / quadro.naturalHeight);
+            const imagemLargura = quadro.naturalWidth * escala;
+            const imagemAltura = quadro.naturalHeight * escala;
+            livroContexto.clearRect(0, 0, livroCanvas.width, livroCanvas.height);
+            livroContexto.imageSmoothingEnabled = false;
+            livroContexto.drawImage(
+                quadro,
+                (largura - imagemLargura) / 2,
+                (altura - imagemAltura) / 2,
+                imagemLargura,
+                imagemAltura
+            );
+        }
+
+        function animarLivro() {
+            livroQuadroAtual += (livroQuadroAlvo - livroQuadroAtual) * 0.22;
+            desenharLivro();
+            if (Math.abs(livroQuadroAlvo - livroQuadroAtual) > 0.01) {
+                requestAnimationFrame(animarLivro);
+            } else {
+                livroQuadroAtual = livroQuadroAlvo;
+                livroAnimando = false;
+            }
+        }
+
+        function atualizarLivro() {
+            const limiteScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+            const progresso = Math.min(window.scrollY / limiteScroll, 1);
+            livroQuadroAlvo = progresso * (livroQuadros.length - 1);
+            if (!livroAnimando) {
+                livroAnimando = true;
+                requestAnimationFrame(animarLivro);
+            }
+        }
+
+        window.addEventListener("scroll", atualizarLivro, { passive: true });
+        window.addEventListener("resize", desenharLivro);
+        atualizarLivro();
+
+        window.addEventListener("scroll", () => { // criação do objeto lista
+        if (window.scrollY >= navVerPosição) {
+            navVermelho.classList.add("fixed", "top-0", "left-0", "w-full", "z-50");
+
+            
+        } else {
+            navVermelho.classList.remove("fixed", "top-0", "left-0", "w-full", "z-50");
+        }
+        });
 });
+
+

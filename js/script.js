@@ -1,265 +1,84 @@
 import livrosRecente from '../Banco.js';
 
+// Altere estes dois números para escolher a quantidade de carrosséis e cards.
+const QUANTIDADE_DE_CARROSSEIS = 4;
+const CARDS_POR_CARROSSEL = 10;
+
 document.addEventListener("DOMContentLoaded", () => {
-
-    const carrosseis = document.querySelectorAll(".carrossel-container");
-
-    carrosseis.forEach((container) => {
-
-        const pista = container.querySelector(".pista-carrossel");
-        const btnNext = container.querySelector(".btn-next");
-        const btnPrev = container.querySelector(".btn-prev");
-
-        // ==========================
-        // CRIAR OS CARDS
-        // ==========================
-
-        const totalCards = 15;
-
-        for (let i = 0; i < totalCards; i++) {
-
-            const card = document.createElement("div");
-
-            card.className =
-                "flex-none w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2";
-
-            card.innerHTML = `
-                <a href="../html/info-livros.html"
-                    class="block w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-
-                        <!-- Imagem -->
-                        <div class="p-4 sm:p-6 flex justify-center items-center overflow-hidden">
-                            <img 
-                                src="${livrosRecente[i].src}" 
-                                alt="Livro" 
-                                class="w-full sm:w-52 md:w-64 lg:w-72 h-auto rounded-xl transition-transform duration-300 hover:scale-105 object-contain"
-                            >
-                        </div>
-
-                        <!-- Conteúdo -->
-                        <div class="p-5 sm:p-6 md:p-8">
-                            <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-3">
-                                ${livrosRecente[i].titulo}
-                            </h2>
-
-                            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
-                                ${livrosRecente[i].descricao}
-                            </p>
-                        </div>
-
-                    </a>
-            `;
-
-            pista.appendChild(card);
-
-        }
-
-        // ==========================
-        // CONFIGURAÇÃO DO SCROLL
-        // ==========================
-
-        pista.classList.add(
-            "flex",
-            "overflow-x-auto",
-            "scroll-smooth",
-            "snap-x",
-            "snap-mandatory",
-            "gap-2"
-        );
-
-        pista.style.scrollbarWidth = "none";
-        pista.style.msOverflowStyle = "none";
-
-        pista.style.webkitOverflowScrolling = "touch";
-
-        pista.querySelectorAll("div").forEach(card => {
-            card.classList.add("snap-start");
-        });
-
-        // ==========================
-        // ESCONDER SCROLLBAR
-        // ==========================
-
-        pista.style.overflowY = "hidden";
-
-        const estilo = document.createElement("style");
-
-        estilo.innerHTML = `
-            .pista-carrossel::-webkit-scrollbar{
-                display:none;
-            }
-        `;
-
-        document.head.appendChild(estilo);
-
-        // ==========================
-        // TAMANHO DO SCROLL
-        // ==========================
-
-        function tamanhoScroll() {
-
-            const card = pista.children[0];
-
-            if (!card) return 300;
-
-            return card.offsetWidth + 16;
-
-        }
-        
-                // ==========================
-        // BOTÃO PRÓXIMO - deixar suave
-        // ==========================
-
-        btnNext.addEventListener("click", () => {
-
-            pista.scrollBy({
-                left: tamanhoScroll(),
-                behavior: "smooth"
-           });
-
-        });
-
-        // ==========================
-        // BOTÃO ANTERIOR
-        // ==========================
-
-        btnPrev.addEventListener("click", () => {
-
-            pista.scrollBy({
-                left: -tamanhoScroll(),
-                behavior: "smooth"
-            });
-
-        });
-
-        // ==========================
-        // DRAG COM O MOUSE
-        // ==========================
-
-        let pressionado = false;
-        let inicioX = 0;
-        let scrollInicial = 0;
-
-        pista.addEventListener("mousedown", (e) => {
-
-            pressionado = true;
-
-            pista.classList.add("cursor-grabbing");
-
-            inicioX = e.pageX;
-
-            scrollInicial = pista.scrollLeft;
-
-        });
-
-        pista.addEventListener("mouseleave", () => {
-
-            pressionado = false;
-
-            pista.classList.remove("cursor-grabbing");
-
-        });
-
-        pista.addEventListener("mouseup", () => {
-
-            pressionado = false;
-
-            pista.classList.remove("cursor-grabbing");
-
-        });
-
-        pista.addEventListener("mousemove", (e) => {
-
-            if (!pressionado) return;
-
-            e.preventDefault();
-
-            const x = e.pageX;
-
-            const distancia = (x - inicioX) * 2;
-
-            pista.scrollLeft = scrollInicial - distancia;
-
-        });
-
-        // ==========================
-        // TOUCH CELULAR
-        // ==========================
-
-        let touchInicio = 0;
-        let scrollTouch = 0;
-
-        pista.addEventListener("touchstart", (e) => {
-
-            touchInicio = e.touches[0].pageX;
-
-            scrollTouch = pista.scrollLeft;
-
-        });
-
-        pista.addEventListener("touchmove", (e) => {
-
-            const x = e.touches[0].pageX;
-
-            const distancia = (x - touchInicio) * 2;
-
-            pista.scrollLeft = scrollTouch - distancia;
-
-        });
-
-        // ==========================
-        // CURSOR
-        // ==========================
-
-        pista.classList.add(
-            "cursor-grab",
-            "select-none"
-        );
-
-        // ==========================
-        // SNAP AUTOMÁTICO
-        // ==========================
-
-        let tempo;
-
-        pista.addEventListener("scroll", () => {
-
-            clearTimeout(tempo);
-
-            tempo = setTimeout(() => {
-
-                const largura = tamanhoScroll();
-
-                const indice = Math.round(pista.scrollLeft / largura);
-
-                pista.scrollTo({
-
-                    left: indice * largura,
-
-                    behavior: "smooth"
-
-                });
-
-            }, 100);
-
-        });
-
-        // ==========================
-        // RESPONSIVO
-        // ==========================
-
-        window.addEventListener("resize", () => {
-
-            pista.scrollTo({
-
-                left: 0,
-
-                behavior: "instant"
-
-            });
-
-        });
-
+  const containerImagens = document.getElementById('container-imagens');
+
+  if (!containerImagens) return;
+
+  let carrosseisHtml = '';
+
+  for (let numero = 0; numero < QUANTIDADE_DE_CARROSSEIS; numero++) {
+    const inicio = numero * CARDS_POR_CARROSSEL;
+    const tipoLinha = numero % 2 === 1 ? 'linhaEsquerda' : 'linhaDireita';
+    const tipoAnimacao = numero % 2 === 1 ? 'fade-left' : 'fade-right';
+    
+    const livrosDoCarrossel = livrosRecente.slice(inicio, inicio + CARDS_POR_CARROSSEL);
+
+    
+    const slides = livrosDoCarrossel.map((livro) => `
+      <div class="swiper-slide h-[540px] py-6" style="width: 280px">
+        <a href="../html/Info-livros.html"
+          class="block h-full w-[280px] max-w-full mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-105">
+
+          <div class="rounded-xl p-4 sm:p-6 flex justify-center items-center">
+            <img
+              src="${livro.src}"
+              alt="Capa de ${livro.titulo}"
+              class="w-full h-80 rounded-xl"
+            >
+          </div>
+
+          <div class=" overflow-hidden p-4 text-left sm:p-4">
+            <h2 class=" font-bold text-gray-800 mb-3">
+              ${livro.titulo}
+            </h2>
+
+            <p class="text-gray-600 leading-relaxed">
+              ${livro.descricao}
+            </p>
+          </div>
+        </a>
+      </div>`).join('');
+      
+    carrosseisHtml += `
+    <div data-aos="${tipoAnimacao}" class="${tipoLinha} "></div>
+      <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="m-16 mx-auto w-[75%]">
+        <div class="swiper biblioteca-swiper h-full w-full overflow-hidden px-4 pb-12">
+          <div class="swiper-wrapper items-stretch">${slides}</div>
+          <button class="swiper-button-prev max-sm:hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
+           </button>
+            <button class="swiper-button-next max-sm:hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+                <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
+            </button>
+          <div class="swiper-pagination !static mt-8"></div>
+
+          
+        </div>
+      </section>`;
+  }
+
+  containerImagens.innerHTML = carrosseisHtml;
+
+  containerImagens.querySelectorAll('.swiper').forEach((elemento) => {
+    new Swiper(elemento, {
+      direction: 'horizontal',
+      loop: false,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      pagination: {
+        el: elemento.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      navigation: {
+        nextEl: elemento.querySelector('.swiper-button-next'),
+        prevEl: elemento.querySelector('.swiper-button-prev'),
+      },
     });
+  });
 
 });
