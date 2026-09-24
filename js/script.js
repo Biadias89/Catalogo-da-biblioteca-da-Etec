@@ -49,10 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="m-16 mx-auto w-[75%]">
         <div class="swiper biblioteca-swiper h-full w-full overflow-hidden px-4 pb-12">
           <div class="swiper-wrapper items-stretch">${slides}</div>
-          <button class="swiper-button-prev max-sm:hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+          <button class="swiper-button-prev hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
                 <img class="p-3 scale-x-[-1]" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Anterior">
            </button>
-            <button class="swiper-button-next max-sm:hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
+            <button class="swiper-button-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
                 <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
             </button>
           <div class="swiper-pagination !static mt-8"></div>
