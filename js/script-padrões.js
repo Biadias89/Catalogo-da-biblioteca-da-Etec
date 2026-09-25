@@ -31,10 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pesquisaButton.forEach(pesquisaButton => {
         pesquisaButton.innerHTML = `
-        
-
             <div class="relative">
-
                 <input
                     type="text"
                     placeholder="Pesquisar algo..."
@@ -44,18 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-[#AD0E0A] text-white rounded-md cursor-pointer">
                     Pesquisa Avançada
                 </button>
-                
-                </div>
+            </div>
         `;
-});
+    });
         nav.innerHTML = `
                 <div class="w-full mx-auto flex items-center bg-[#2A2A2A] p-2 ">
-                    <img src="../img/etec.png" class="w-1/4 lg:w-1/10 ml-5" >
+                    <img src="../img/etec.png" class="w-1/3 lg:w-1/10 ml-5" >
                 </div>
                 
 
                 <div id="navVermelho" class="bg-[#6B0000] shadow-md" >
-                    <div class="flex items-center justify-between gap-4 px-2">
+                    <div class="flex items-center justify-between gap-4 px-2 p-1">
                         <div class="flex ml-0 py-1 gap-4">
                         <a href="../html/index.html" class="p-2 rounded hover:bg-red-900 transition duration-300">
                             <img src="../img/icones-02.svg" alt="Página Inicial" class="w-6 h-6">
@@ -67,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             <img src="../img/icones-03.svg" alt="Catálogo" class="w-6 h-6">
                         </a>
                         </div>
+                        <a href="#">
                         <canvas id="livroScrollCanvas" class="livro-scroll-canvas" width="112" height="48" aria-label="Livro animado conforme a rolagem da página"></canvas>
+                        </a>
                     </div>
                 </div>
              `;

@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`).join('');
       
     carrosseisHtml += `
-    <div data-aos="${tipoAnimacao}" class="${tipoLinha} "></div>
+    <div data-aos="${tipoAnimacao}" class="${tipoLinha} mt-10"></div>
       <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="m-16 mx-auto w-[75%]">
         <div class="swiper biblioteca-swiper h-full w-full overflow-hidden px-4 pb-12">
           <div class="swiper-wrapper items-stretch">${slides}</div>
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="swiper-button-next hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-xl cursor-pointer">
                 <img class="p-3" src="https://cdn-icons-png.flaticon.com/512/724/724954.png" alt="Próximo">
             </button>
-          <div class="swiper-pagination !static mt-8"></div>
+          <div class="swiper-pagination !static mt-5"></div>
 
           
         </div>
@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
   containerImagens.querySelectorAll('.swiper').forEach((elemento) => {
     new Swiper(elemento, {
       direction: 'horizontal',
-      loop: false,
-      slidesPerView: 'auto',
+      loop: true,
+      slidesPerView: 1,
       spaceBetween: 20,
       pagination: {
         el: elemento.querySelector('.swiper-pagination'),
@@ -78,6 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
         nextEl: elemento.querySelector('.swiper-button-next'),
         prevEl: elemento.querySelector('.swiper-button-prev'),
       },
+      breakpoints:{
+        1080: {
+          slidesPerView: 3
+        },
+        1500:{
+          slidesPerView: 5
+        },
+        870:{
+          slidesPerView: 2
+        }
+      }
     });
   });
 

@@ -1,14 +1,10 @@
-html,
-body {
-    overflow-x: hidden;
-}
 
 .livro-scroll-canvas {
     display: block;
     width: 112px;
     height: 48px;
     flex: 0 0 112px;
-    cursor: default;
+    cursor:pointer;
     image-rendering: pixelated;
 }
 
